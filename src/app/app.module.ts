@@ -36,6 +36,7 @@ import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/crea
 import { DialogoChatsComponent } from './components/chats/list-chats/dialogo-chats/dialogo-chats.component';
 import { StudentDialogoComponent } from './components/student/student-listar/student-dialogo/student-dialogo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatFormFieldModule,
     MatButtonModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule, 
+    MatSidenavModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

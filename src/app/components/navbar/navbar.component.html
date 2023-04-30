@@ -1,14 +1,47 @@
 
-    <mat-toolbar color="primary" class="doc-navbar">
+    <!-- <mat-toolbar color="primary" class="doc-navbar">
         <span>Future Engineers</span>
         <span class="example-spacer"> </span>
         <div class="example-button-row">
-            <!-- <button mat-raised-button routerLink="/https://hilamesias.github.io/Future-Engineers-Landing/public/">Información</button> -->
+            <button mat-raised-button routerLink="/https://hilamesias.github.io/Future-Engineers-Landing/public/">Información</button>
             <button mat-raised-button routerLink="/users">Users</button>
             <button mat-raised-button routerLink="/memberships">Membresías</button>
             <button mat-raised-button routerLink="/students">Estudiantes</button>
             <button mat-raised-button routerLink="/simulations">Simulaciones</button>
             <button mat-raised-button routerLink="/chats">Chats</button>
         </div>
-      </mat-toolbar>
+      </mat-toolbar> -->
+
+        <mat-toolbar color="primary">
+          <div fxShow="true" fxHide.gt-sm="true">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+      
+          <a mat-button class="companyName" routerLink="/">
+            <span>Future Engineers</span>
+          </a>
+          <span class="example-spacer"></span>
+          <div fxShow="true" fxHide.lt-md="true">
+            <a mat-button routerLink="/users">Usuarios</a>
+            <a mat-button routerLink="/memberships">Membresías</a>
+            <a mat-button routerLink="/students">Estudiantes</a>
+            <a mat-button routerLink="/simulations">Simulaciones</a>
+            <a mat-button routerLink="/chats">Chats</a>
+          </div>
+      
+        </mat-toolbar>
+        <mat-sidenav-container fxFlexFill class="example-container">
+      
+          <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+            <div fxLayout="column">
+              <a mat-button routerLink="/users">Usuarios</a>
+              <a mat-button routerLink="/memberships">Membresías</a>
+              <a mat-button routerLink="/students">Estudiantes</a>
+              <a mat-button routerLink="/simulations">Simulaciones</a>
+              <a mat-button routerLink="/chats">Chats</a>
+            </div>
+          </mat-sidenav>
+        </mat-sidenav-container>
 

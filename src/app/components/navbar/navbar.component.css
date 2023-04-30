@@ -8,10 +8,6 @@
     align-items: center;
     padding: 4px 16px;
 }
-
-mat-toolbar{
-  display: block;
-}
   span {
     margin: auto;
     text-align: center;
@@ -19,4 +15,41 @@ mat-toolbar{
   
   button {
     margin: 0px 2px;
+  }
+
+
+  .companyName{
+    font-size: 120%;
+}
+
+.mat-toolbar{
+  height: 7vh;
+}
+
+div {
+    overflow: inherit;
+}
+
+a{
+    text-decoration: none;
+    font-size: 100%;
+    white-space: normal;
+}
+
+button{
+    font-size: 100%;
+    min-width: min-content;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-content{
+      font-size: 200%;
+      text-align: center;
   }
