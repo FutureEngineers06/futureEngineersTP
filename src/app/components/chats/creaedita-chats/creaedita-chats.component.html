@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crear chats</title>
+</head>
+<body>
+    <div class="container">
+      <br>
+        <div style="text-align: center;" >
+        <h1>Registro de Chats</h1>
+        </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Mensaje Estudiante</mat-label>
+          <input matInput placeholder="Hola" formControlName="mensaje_estudiante" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Mensaje Tutor</mat-label>
+          <input matInput placeholder="Hola" formControlName="mensaje_tutor" required>
+        </mat-form-field>
+        <br>
+
+        <!-- <mat-form-field class="example-full-width">
+            <mat-label>Fecha Envío</mat-label>
+            <input matInput placeholder="12:15" formControlName="fecha_envio">
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Fecha Recepción</mat-label>
+            <input matInput placeholder="12:30" formControlName="fecha_recepcion">
+          </mat-form-field>
+        <br> -->
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/chats">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+</body>
+</html>

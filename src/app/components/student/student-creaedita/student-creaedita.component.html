@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crear Estudiante</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;" >
+        <h1>Registro de estudiantes</h1>
+        </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Colegio</mat-label>
+          <input matInput placeholder="Curso" formControlName="colegio" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Edad</mat-label>
+          <input matInput placeholder="Plan Curso" formControlName="edad" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>User ID</mat-label>
+            <input matInput placeholder="Metodologia Curso" formControlName="users_user_id" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Membresia ID</mat-label>
+            <input matInput placeholder="Duracion en horas" formControlName="membresia_id" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Sala ID</mat-label>
+          <input matInput placeholder="Código" formControlName="sala_id" required>
+        </mat-form-field>
+        <br>
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/students">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+</body>
+</html>

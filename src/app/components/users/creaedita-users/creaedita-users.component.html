@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <app-navbar></app-navbar>
+
+  <div class="container justify-content-center">
+    <br>
+    <div style="text-align:center;">
+      <h1>Registro de Usuarios</h1>
+    </div>
+
+    <form class="example-form" [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Rol</mat-label>
+          <input matInput placeholder="rol" formControlName="rol" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput placeholder="Nombre completo" formControlName="nombre_completo" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="algo@example.com" formControlName="correo_electronico" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="contraseña" [type]="hide ?'password':'text'" formControlName="contrasena" required>
+        <i class="material-icons" matSuffix (click)="hide = !hide">{{hide ? 'visibility':'visibility_off'}}</i>
+       </mat-form-field>
+        <br>
+
+        <div style="text-align:center;">
+          <button mat-raised-button color="primary">aceptar</button>
+          <button mat-raised-button color="warn" routerLink="/users">cancelar</button>
+        </div>
+        <br>
+        <p>{{mensaje}}</p>
+
+      </form>
+
+  </div>
+
+</body>
+</html>

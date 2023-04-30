@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membresias</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;">
+            <h1>Membresías</h1>
+        </div>
+        <div style="text-align:end;">
+            <button mat-raised-button color="primary" routerLink="/memberships/new">Agregar</button>
+        </div>
+        <br>
+        <!-- FILTRAR -->
+        <mat-form-field>
+            <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+        </mat-form-field>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- en los "" va el nombre de displaycolumns []
+            en elements. pego lo del author.ts de model
+            -->
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Código </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="montoPago">
+                <th mat-header-cell *matHeaderCellDef> Monto pago </th>
+                <td mat-cell *matCellDef="let element"> {{element.monto_pago}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="beneficios">
+                <th mat-header-cell *matHeaderCellDef> Beneficios </th>
+                <td mat-cell *matCellDef="let element"> {{element.beneficios}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="metodoPago">
+                <th mat-header-cell *matHeaderCellDef> Método de pago </th>
+                <td mat-cell *matCellDef="let element"> {{element.metodo_de_pago}} </td>
+            </ng-container>
+
+            <!-- MODIFICAR -->
+            <ng-container matColumnDef="accions1">
+                <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+                <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="primary" [routerLink]="['edicion', element.id]">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="accions2">
+                <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+  
+    <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
+
+    </div>
+</body>
+</html>
